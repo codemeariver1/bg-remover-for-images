@@ -1,6 +1,10 @@
 import cv2
 from cvzone.SelfiSegmentationModule import SelfiSegmentation
 import os
+import mediapipe as mp
+
+#TODO: idea... add functionality for user uploading files and handling segmentation approvals 
+#               from a web interface or mobile app then sexify
 
 # Parent Directory path
 parent_dir = "/Users/bigdaddy/Desktop/Code projects/bg-remover-for-images/"
@@ -68,10 +72,12 @@ for image in img_list:
             # Remove original image from images folder
             orig_img_path = os.path.join(parent_dir, "images", list_img[img_index])
             os.remove(orig_img_path)
-
-            print('Segmentation of (', list_img[img_index], ')successful! continuing...')
+        if cv2.waitKey(0) == ord('n'):
+            print('Segmentation of (', list_img[img_index], ') failed continuing...')
+            break
+        print('Segmentation of (', list_img[img_index], ') successful! continuing...')
     except:
-        print('Segmentation of', list_img[img_index], 'failed, continuing...')
+        print('Segmentation of (', list_img[img_index], ') failed, continuing...')
         pass 
 
     img_index += 1
