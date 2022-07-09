@@ -9,7 +9,7 @@ import mediapipe as mp
 # Parent Directory path
 parent_dir = "/Users/bigdaddy/Desktop/Code projects/bg-remover-for-images/"
 
-print("######################################################################")
+print("#######################################################################")
 
 print("Running checks:") # Create folders if needed
 # Create output folder if doesn't exist
@@ -87,4 +87,4 @@ for image in img_list:
         pass 
 
 print("Image segmentation process completed!")
-print("######################################################################")
+print("#######################################################################")
