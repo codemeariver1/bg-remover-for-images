@@ -1,7 +1,6 @@
 import cv2
 from cvzone.SelfiSegmentationModule import SelfiSegmentation
 import os
-import mediapipe as mp
 
 #TODO: idea... add functionality for user uploading files and handling segmentation approvals 
 #               from a web interface or mobile app then sexify
